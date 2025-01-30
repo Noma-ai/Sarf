@@ -1,0 +1,6 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "files.encoding": "windows1256",
+    "files.autoSave": "onWindowChange"
+}

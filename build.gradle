@@ -1,0 +1,51 @@
+plugins {
+    id 'java'
+    id 'application'  // For running the main class directly using Gradle
+}
+
+group = 'com.sarf'  // Change this if you have a different group
+version = '1.0-SNAPSHOT'
+
+sourceCompatibility = '1.8'  // Change this to match your JDK version
+targetCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.codehaus.plexus:plexus-utils:3.3.0'  // Example dependency, add more as needed
+    testImplementation 'junit:junit:4.13.2'  // For testing, if applicable
+    implementation 'org.apache.commons:commons-digester3:3.2'
+    implementation 'commons-beanutils:commons-beanutils:1.9.3'
+    implementation 'org.apache.commons:commons-collections4:4.1'
+}
+
+application {
+    mainClass = 'sarf.ui.MainApp'
+    // applicationDefaultJvmArgs = ['-Dfile.encoding=UTF-8']  // Ensure UTF-8 encoding is used
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'  // Set the file encoding to UTF-8
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']  // Tell Gradle to look in "src" instead of "src/main/java"
+        }
+    }
+}
+
+task buildProject(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'sarf.ui.MainApp'
+    args = []  // Add any arguments if needed
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'Windows-1256'
+}
+
+
