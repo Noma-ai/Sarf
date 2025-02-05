@@ -383,6 +383,9 @@ public class ControlPaneContainer extends JPanel {
             if (rootTextList.size() > 1) {
                 rootFld.setText(newRoot);
             }
+            System.out.println(newRoot);
+            System.out.println(augmentedRoot);
+            System.out.println(unaugmentedList);
             displayTrilateral(newRoot, augmentedRoot, unaugmentedList);
         }
 

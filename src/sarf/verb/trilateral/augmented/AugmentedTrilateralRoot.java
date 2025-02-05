@@ -62,4 +62,17 @@ public class AugmentedTrilateralRoot implements TrilateralRoot{
     public void setC1(char c1) {
         this.c1 = c1;
     }
+
+        // Override the toString method to print meaningful information
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("AugmentedTrilateralRoot {");
+            sb.append("C1=").append(c1);
+            sb.append(", C2=").append(c2);
+            sb.append(", C3=").append(c3);
+            sb.append(", AugmentationFormulas=").append(augmentations.values());
+            sb.append("}");
+            return sb.toString();
+        }
 }
